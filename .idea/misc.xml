@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/background_color.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/edit.xml" value="0.135" />
         <entry key="app/src/main/res/drawable/ic_account.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_comment.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_images.xml" value="0.124" />
