@@ -11,17 +11,18 @@
         android:theme="@style/Theme.Bobagram">
         <activity
             android:name=".DashboardActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".LoginActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".RegistrationActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".SplashScreen"
-            android:exported="false" />
-        <activity android:name=".MainActivity">
+            android:exported="true" />
+        <activity android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
