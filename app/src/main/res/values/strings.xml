@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Bobagram</string>
+    <string name="log_on">Log On</string>
 </resources>
