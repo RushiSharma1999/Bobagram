@@ -15,14 +15,14 @@
         <entry key="app/src/main/res/drawable/name.xml" value="0.219" />
         <entry key="app/src/main/res/drawable/password.xml" value="0.219" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.13876651982378854" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.42061855670103093" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2157135009765625" />
         <entry key="app/src/main/res/layout/activity_registration.xml" value="0.2635416666666667" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.2635416666666667" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
