@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "41702504017",
+    "firebase_url": "https://bobagram-69-default-rtdb.firebaseio.com",
+    "project_id": "bobagram-69",
+    "storage_bucket": "bobagram-69.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:41702504017:android:596273a9f71febe9146a70",
+        "android_client_info": {
+          "package_name": "com.example.bobagram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "41702504017-uiloem9reib84l4r8sn4185d5elq06an.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkfbT2hQoADAQS8d8yXR0fl2P6rey6Ulc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "41702504017-uiloem9reib84l4r8sn4185d5elq06an.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
