@@ -54,7 +54,7 @@ public class AddBlogsFragment extends Fragment {
     }
 
     FirebaseAuth firebaseAuth;
-    EditText title, des;
+    EditText title, drink, des;
     private static final int CAMERA_REQUEST = 100;
     private static final int STORAGE_REQUEST = 200;
     String cameraPermission[];
@@ -77,6 +77,7 @@ public class AddBlogsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_add_blogs, container, false);
 
         title = view.findViewById(R.id.ptitle);
+        drink = view.findViewById(R.id.pdrink);
         des = view.findViewById(R.id.pdes);
         image = view.findViewById(R.id.imagep);
         upload = view.findViewById(R.id.pupload);
@@ -123,11 +124,19 @@ public class AddBlogsFragment extends Fragment {
             public void onClick(View v) {
                 String titl = "" + title.getText().toString().trim();
                 String description = "" + des.getText().toString().trim();
+                String drk = "" + drink.getText().toString().trim();
 
                 // If empty set error
                 if (TextUtils.isEmpty(titl)) {
                     title.setError("Title Cant be empty");
                     Toast.makeText(getContext(), "Title can't be left empty", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                // If empty set error
+                if (TextUtils.isEmpty(drk)) {
+                    drink.setError("Drink Cant be empty");
+                    Toast.makeText(getContext(), "Drink can't be left empty", Toast.LENGTH_LONG).show();
                     return;
                 }
 
@@ -143,7 +152,7 @@ public class AddBlogsFragment extends Fragment {
                     Toast.makeText(getContext(), "Select an Image", Toast.LENGTH_LONG).show();
                     return;
                 } else {
-                    uploadData(titl, description);
+                    uploadData(titl, drk, description);
                 }
             }
         });
@@ -256,7 +265,7 @@ public class AddBlogsFragment extends Fragment {
     }
 
     // Upload the value of blog data into firebase
-    private void uploadData(final String titl, final String description) {
+    private void uploadData(final String titl, final String drk, final String description) {
         // show the progress dialog box
         pd.setMessage("Publishing Post");
         pd.show();
@@ -284,6 +293,7 @@ public class AddBlogsFragment extends Fragment {
                     hashMap.put("uemail", email);
                     hashMap.put("udp", dp);
                     hashMap.put("title", titl);
+                    hashMap.put("drink", drk);
                     hashMap.put("description", description);
                     hashMap.put("uimage", downloadUri);
                     hashMap.put("ptime", timestamp);
@@ -299,6 +309,7 @@ public class AddBlogsFragment extends Fragment {
                                     pd.dismiss();
                                     Toast.makeText(getContext(), "Published", Toast.LENGTH_LONG).show();
                                     title.setText("");
+                                    drink.setText("");
                                     des.setText("");
                                     image.setImageURI(null);
                                     imageuri = null;

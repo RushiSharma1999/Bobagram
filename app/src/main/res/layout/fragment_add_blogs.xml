@@ -17,9 +17,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit"
-            android:hint="Enter Title"
+            android:hint="Enter Shop"
             android:minHeight="80dp"
             android:padding="10dp"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/pdrink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit"
+            android:hint="Enter Drink"
+            android:minHeight="80dp"
+            android:layout_marginTop="15dp"
             android:singleLine="true" />
 
         <ImageView
