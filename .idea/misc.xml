@@ -20,10 +20,13 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2157135009765625" />
         <entry key="app/src/main/res/layout/activity_registration.xml" value="0.2635416666666667" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.2635416666666667" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/row_posts.xml" value="0.2435760498046875" />
+        <entry key="app/src/main/res/xml/row_posts.xml" value="0.1" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
