@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -137,6 +138,8 @@ public class AdapterPosts extends RecyclerView.Adapter<com.example.bobagram.Adap
         holder.more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("CREATION", "uid: " + uid);
+                Log.d("CREATION", "myuid: " + myuid);
                 showMoreOptions(holder.more, uid, myuid, ptime, image);
             }
         });
