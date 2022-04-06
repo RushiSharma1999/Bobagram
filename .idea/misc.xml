@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Spencer/AndroidStudioProjects/Bobagram/app/src/main/res/drawable/ic_comment.xml" value="0.2485" />
+        <entry key="..\:/Users/Spencer/AndroidStudioProjects/Bobagram/app/src/main/res/drawable/ic_commenting.xml" value="0.2485" />
+        <entry key="..\:/Users/Spencer/AndroidStudioProjects/Bobagram/app/src/main/res/drawable/ic_home.xml" value="0.2485" />
+        <entry key="..\:/Users/Spencer/AndroidStudioProjects/Bobagram/app/src/main/res/drawable/ic_like.xml" value="0.2485" />
         <entry key="..\:/Users/Spencer/AndroidStudioProjects/Bobagram/app/src/main/res/layout/activity_edit_profile_page.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Spencer/AndroidStudioProjects/Bobagram/app/src/main/res/layout/activity_post_details.xml" value="0.1" />
+        <entry key="..\:/Users/Spencer/AndroidStudioProjects/Bobagram/app/src/main/res/layout/activity_post_details.xml" value="0.33" />
         <entry key="..\:/Users/Spencer/AndroidStudioProjects/Bobagram/app/src/main/res/layout/activity_registration.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Spencer/AndroidStudioProjects/Bobagram/app/src/main/res/layout/activity_splash_screen.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/Spencer/AndroidStudioProjects/Bobagram/app/src/main/res/layout/fragment_add_blogs.xml" value="0.36666666666666664" />
