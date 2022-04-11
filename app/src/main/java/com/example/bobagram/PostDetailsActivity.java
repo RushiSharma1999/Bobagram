@@ -285,7 +285,7 @@ public class PostDetailsActivity extends AppCompatActivity {
                     String ptitle = dataSnapshot1.child("title").getValue().toString();
                     String descriptions = dataSnapshot1.child("description").getValue().toString();
                     uimage = dataSnapshot1.child("uimage").getValue().toString();
-                    hisdp = dataSnapshot1.child("udp").getValue().toString();
+                    //hisdp = dataSnapshot1.child("udp").getValue().toString();
                     // hisuid = dataSnapshot1.child("uid").getValue().toString();
                     String uemail = dataSnapshot1.child("uemail").getValue().toString();
                     hisname = dataSnapshot1.child("uname").getValue().toString();
@@ -311,11 +311,13 @@ public class PostDetailsActivity extends AppCompatActivity {
 
                         }
                     }
+                    /*
                     try {
                         Glide.with(PostDetailsActivity.this).load(hisdp).into(picture);
                     } catch (Exception e) {
 
                     }
+                     */
 
 
                 }

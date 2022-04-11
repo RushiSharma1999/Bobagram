@@ -2,9 +2,9 @@ package com.example.bobagram;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.content.Intent;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -12,33 +12,38 @@ import com.google.firebase.auth.FirebaseUser;
 @SuppressLint("CustomSplashScreen")
 public class SplashScreen extends AppCompatActivity {
 
-    FirebaseUser currentUser;
-    private FirebaseAuth mAuth;
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        mAuth = FirebaseAuth.getInstance();
-        currentUser = mAuth.getCurrentUser();
+
+        auth = FirebaseAuth.getInstance();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                FirebaseUser user = mAuth.getCurrentUser();
+                FirebaseUser user = auth.getCurrentUser();
                 if (user == null)
                 {
-                    Intent intent = new Intent (SplashScreen.this, LoginActivity.class);
+                    Intent intent = new Intent (
+                            SplashScreen.this,
+                            LoginActivity.class);
+
                     startActivity(intent);
                     finish();
                 }
                 else
                 {
-                    Intent mainIntent = new Intent(SplashScreen.this, DashboardActivity.class);
-                    mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    Intent mainIntent = new Intent(
+                            SplashScreen.this,
+                            DashboardActivity.class);
+                            mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
                     startActivity(mainIntent);
                     finish();
                 }
             }
-        }, 1000);
+        }, 1500);
     }
 }
