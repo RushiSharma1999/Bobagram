@@ -29,7 +29,6 @@ public class SplashScreen extends AppCompatActivity {
                     Intent intent = new Intent (
                             SplashScreen.this,
                             LoginActivity.class);
-
                     startActivity(intent);
                     finish();
                 }
@@ -38,8 +37,9 @@ public class SplashScreen extends AppCompatActivity {
                     Intent mainIntent = new Intent(
                             SplashScreen.this,
                             DashboardActivity.class);
-                            mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
+                            mainIntent.addFlags(
+                                    Intent.FLAG_ACTIVITY_NEW_TASK |
+                                    Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(mainIntent);
                     finish();
                 }
