@@ -19,7 +19,7 @@
                 android:id="@+id/cavertv"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
-                android:background="@color/colorPrimaryDark"
+                android:background="@color/bobaPearls"
                 android:scaleType="fitXY">
             </ImageView>
 
@@ -36,7 +36,7 @@
                     android:layout_height="120dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginStart="20dp"
-                    android:background="@color/colorPrimary"
+                    android:background="@color/honeyBoba"
                     android:padding="5dp"
                     android:src="@drawable/ic_images" />
 
