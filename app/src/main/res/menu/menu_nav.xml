@@ -12,11 +12,6 @@
         android:id="@+id/nav_addblogs"
         android:icon="@drawable/ic_add"
         android:title="Add Blogs" />
-
-    <item
-        android:id="@+id/nav_chat"
-        android:icon="@drawable/ic_chat"
-        android:title="ChatList" />
     <item
         android:id="@+id/nav_profile"
         android:icon="@drawable/ic_account"
