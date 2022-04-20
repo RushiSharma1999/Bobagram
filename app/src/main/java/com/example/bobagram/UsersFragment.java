@@ -1,21 +1,5 @@
 package com.example.bobagram;
 
-import android.os.Bundle;
-import android.text.TextUtils;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.SearchView;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.view.MenuItemCompat;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -25,6 +9,22 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.SearchView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.view.MenuItemCompat;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,10 +33,10 @@ import java.util.List;
  */
 public class UsersFragment extends Fragment {
 
-    RecyclerView recyclerView;
-    AdapterUsers adapterUsers;
+    FirebaseAuth fbAuth;
+    RecyclerView rView;
     List<ModelUsers> usersList;
-    FirebaseAuth firebaseAuth;
+    AdapterUsers adapterUsers;
 
     public UsersFragment() {
         // Required empty public constructor
@@ -45,33 +45,36 @@ public class UsersFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        usersList = new ArrayList<>();
+        fbAuth = FirebaseAuth.getInstance();
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_users, container, false);
-        recyclerView = view.findViewById(R.id.recyclep);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        usersList = new ArrayList<>();
-        firebaseAuth = FirebaseAuth.getInstance();
+        rView = view.findViewById(R.id.recycle_user);
+        rView.setHasFixedSize(true);
+        rView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
         getAllUsers();
         return view;
     }
 
     private void getAllUsers() {
-        final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
-        reference.addValueEventListener(new ValueEventListener() {
+        final FirebaseUser fUser = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference dReference = FirebaseDatabase.getInstance().getReference("Users");
+
+        dReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 usersList.clear();
-                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                    ModelUsers modelUsers = dataSnapshot1.getValue(ModelUsers.class);
-                    if (modelUsers.getUid() != null && !modelUsers.getUid().equals(firebaseUser.getUid())) {
-                        usersList.add(modelUsers);
+
+                for (DataSnapshot dSnap : dataSnapshot.getChildren()) {
+                    ModelUsers mUsers = dSnap.getValue(ModelUsers.class);
+                    if (mUsers.getUid() != null && !mUsers.getUid().equals(fUser.getUid())) {
+                        usersList.add(mUsers);
                     }
                     adapterUsers = new AdapterUsers(getActivity(), usersList);
-                    recyclerView.setAdapter(adapterUsers);
+                    rView.setAdapter(adapterUsers);
                 }
-
             }
 
             @Override
@@ -81,16 +84,18 @@ public class UsersFragment extends Fragment {
         });
     }
 
-    private void searchusers(final String s) {
-        final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
-        reference.addValueEventListener(new ValueEventListener() {
+    private void searchUsers(final String s) {
+        final FirebaseUser fUser = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference dReference = FirebaseDatabase.getInstance().getReference("Users");
+
+        dReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 usersList.clear();
-                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                    ModelUsers modelUsers = dataSnapshot1.getValue(ModelUsers.class);
-                    if (modelUsers.getUid() != null && !modelUsers.getUid().equals(firebaseUser.getUid())) {
+
+                for (DataSnapshot dSnap : dataSnapshot.getChildren()) {
+                    ModelUsers modelUsers = dSnap.getValue(ModelUsers.class);
+                    if (modelUsers.getUid() != null && !modelUsers.getUid().equals(fUser.getUid())) {
                         if (modelUsers.getName().toLowerCase().contains(s.toLowerCase()) ||
                                 modelUsers.getEmail().toLowerCase().contains(s.toLowerCase())) {
                             usersList.add(modelUsers);
@@ -98,9 +103,8 @@ public class UsersFragment extends Fragment {
                     }
                     adapterUsers = new AdapterUsers(getActivity(), usersList);
                     adapterUsers.notifyDataSetChanged();
-                    recyclerView.setAdapter(adapterUsers);
+                    rView.setAdapter(adapterUsers);
                 }
-
             }
 
             @Override
@@ -121,12 +125,12 @@ public class UsersFragment extends Fragment {
         inflater.inflate(R.menu.main_menu, menu);
         menu.findItem(R.id.logout).setVisible(false);
         MenuItem item = menu.findItem(R.id.search);
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(item);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        SearchView sView = (SearchView) MenuItemCompat.getActionView(item);
+        sView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 if (!TextUtils.isEmpty(query.trim())) {
-                    searchusers(query);
+                    searchUsers(query);
                 } else {
                     getAllUsers();
                 }
@@ -136,7 +140,7 @@ public class UsersFragment extends Fragment {
             @Override
             public boolean onQueryTextChange(String newText) {
                 if (!TextUtils.isEmpty(newText.trim())) {
-                    searchusers(newText);
+                    searchUsers(newText);
                 } else {
                     getAllUsers();
                 }
