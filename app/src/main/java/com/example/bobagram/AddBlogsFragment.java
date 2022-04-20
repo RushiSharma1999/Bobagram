@@ -54,7 +54,8 @@ public class AddBlogsFragment extends Fragment {
     }
 
     FirebaseAuth firebaseAuth;
-    EditText title, drink, des;
+    EditText title, drink, des, price, rating;
+
     private static final int CAMERA_REQUEST = 100;
     private static final int STORAGE_REQUEST = 200;
     String cameraPermission[];
@@ -79,6 +80,8 @@ public class AddBlogsFragment extends Fragment {
         title = view.findViewById(R.id.ptitle);
         drink = view.findViewById(R.id.pdrink);
         des = view.findViewById(R.id.pdes);
+        price = view.findViewById(R.id.pprice);
+        rating = view.findViewById(R.id.prating);
         image = view.findViewById(R.id.imagep);
         upload = view.findViewById(R.id.pupload);
         pd = new ProgressDialog(getContext());
@@ -128,6 +131,8 @@ public class AddBlogsFragment extends Fragment {
                 String titl = "" + title.getText().toString().trim();
                 String description = "" + des.getText().toString().trim();
                 String drk = "" + drink.getText().toString().trim();
+                String pric = "" + price.getText().toString().trim();
+                String rate = "" + price.getText().toString().trim();
 
                 // If empty set error
                 if (TextUtils.isEmpty(titl)) {
@@ -144,6 +149,20 @@ public class AddBlogsFragment extends Fragment {
                 }
 
                 // If empty set error
+                if (TextUtils.isEmpty(pric)) {
+                    price.setError("Price Cant be empty");
+                    Toast.makeText(getContext(), "Price can't be left empty", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                // If empty set error
+                if (TextUtils.isEmpty(rate)) {
+                    rating.setError("Rating Cant be empty");
+                    Toast.makeText(getContext(), "Rating can't be left empty", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                // If empty set error
                 if (TextUtils.isEmpty(description)) {
                     des.setError("Description Cant be empty");
                     Toast.makeText(getContext(), "Description can't be left empty", Toast.LENGTH_LONG).show();
@@ -155,7 +174,7 @@ public class AddBlogsFragment extends Fragment {
                     Toast.makeText(getContext(), "Select an Image", Toast.LENGTH_LONG).show();
                     return;
                 } else {
-                    uploadData(titl, drk, description);
+                    uploadData(titl, drk, rate, pric, description);
                 }
             }
         });
@@ -268,7 +287,7 @@ public class AddBlogsFragment extends Fragment {
     }
 
     // Upload the value of blog data into firebase
-    private void uploadData(final String titl, final String drk, final String description) {
+    private void uploadData(final String titl, final String drk, final String rate, final String pric, final String description) {
         // show the progress dialog box
         pd.setMessage("Publishing Post");
         pd.show();
@@ -297,6 +316,8 @@ public class AddBlogsFragment extends Fragment {
                     hashMap.put("udp", dp);
                     hashMap.put("title", titl);
                     hashMap.put("drink", drk);
+                    hashMap.put("rating", rate);
+                    hashMap.put("price", pric);
                     hashMap.put("description", description);
                     hashMap.put("uimage", downloadUri);
                     hashMap.put("ptime", timestamp);
@@ -314,6 +335,8 @@ public class AddBlogsFragment extends Fragment {
                                     title.setText("");
                                     drink.setText("");
                                     des.setText("");
+                                    rating.setText("");
+                                    price.setText("");
                                     image.setImageURI(null);
                                     imageuri = null;
                                     startActivity(new Intent(getContext(), DashboardActivity.class));
