@@ -76,14 +76,6 @@ public class DashboardActivity extends AppCompatActivity {
                     afragTrans.replace(R.id.dashboard_content, addFrag, "");
                     afragTrans.commit();
                     return true;
-
-                case R.id.nav_chat:
-                    actionBar.setTitle("Chats");
-                    ChatListFragment chatFragment = new ChatListFragment();
-                    FragmentTransaction cfragTrans = getSupportFragmentManager().beginTransaction();
-                    cfragTrans.replace(R.id.dashboard_content, chatFragment, "");
-                    cfragTrans.commit();
-                    return true;
             }
             return false;
         }
