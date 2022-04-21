@@ -71,6 +71,9 @@ public class AdapterPosts extends RecyclerView.Adapter<com.example.bobagram.Adap
         final String titlee = modelPosts.get(position).getTitle();
         final String descri = modelPosts.get(position).getDescription();
         final String ptime = modelPosts.get(position).getPtime();
+        final String rate = modelPosts.get(position).getRating();
+        final String pric = modelPosts.get(position).getPrice();
+        final String drinkk = modelPosts.get(position).getDrink();
         String dp = modelPosts.get(position).getUdp();
         String plike = modelPosts.get(position).getPlike();
         final String image = modelPosts.get(position).getUimage();
@@ -83,6 +86,9 @@ public class AdapterPosts extends RecyclerView.Adapter<com.example.bobagram.Adap
         holder.name.setText(nameh);
         holder.title.setText(titlee);
         holder.description.setText(descri);
+        holder.drink.setText(drinkk);
+        holder.price.setText("Price: $" + pric);
+        holder.rating.setText("Rating: " + rate);
         holder.time.setText(timedate);
         holder.like.setText(plike + " Likes");
         holder.comments.setText(comm + " Comments");
@@ -229,7 +235,7 @@ public class AdapterPosts extends RecyclerView.Adapter<com.example.bobagram.Adap
 
     class MyHolder extends RecyclerView.ViewHolder {
         ImageView picture, image;
-        TextView name, time, title, description, like, comments;
+        TextView name, time, title, description, like, comments, rating, price, drink;
         ImageButton more;
         Button likebtn, comment;
         LinearLayout profile;
@@ -248,6 +254,9 @@ public class AdapterPosts extends RecyclerView.Adapter<com.example.bobagram.Adap
             likebtn = itemView.findViewById(R.id.like);
             comment = itemView.findViewById(R.id.comment);
             profile = itemView.findViewById(R.id.profilelayout);
+            rating = itemView.findViewById(R.id.trating);
+            price = itemView.findViewById(R.id.tprice);
+            drink = itemView.findViewById(R.id.tdrink);
         }
     }
 }

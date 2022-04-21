@@ -4,7 +4,18 @@ public class ModelPost {
     public ModelPost() {
     }
 
+    String ptime, pcomments;
+    String title;
     String description;
+    String drink;
+    String price;
+    String rating;
+    String udp;
+    String uemail;
+    String uid;
+    String uimage;
+
+    String uname, plike;
 
     public String getDescription() {
         return description;
@@ -13,6 +24,18 @@ public class ModelPost {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public String getRating() { return rating; }
+
+    public void setRating(String rating) { this.rating = rating; }
+
+    public String getPrice() { return price; }
+
+    public void setPrice(String price) { this.price = price; }
+
+    public String getDrink() { return drink; }
+
+    public void setDrink(String drink) { this.drink = drink; }
 
     public String getPid() {
         return pid;
@@ -96,8 +119,11 @@ public class ModelPost {
         this.pcomments = pcomments;
     }
 
-    public ModelPost(String description, String pid, String ptime, String pcomments, String title, String udp, String uemail, String uid, String uimage, String uname, String plike) {
+    public ModelPost(String description, String pid, String ptime, String pcomments, String title, String udp, String uemail, String uid, String uimage, String uname, String plike, String rating, String price, String drink) {
         this.description = description;
+        this.rating = rating;
+        this.price = price;
+        this.drink = drink;
         this.pid = pid;
         this.ptime = ptime;
         this.pcomments = pcomments;
@@ -109,16 +135,4 @@ public class ModelPost {
         this.uname = uname;
         this.plike = plike;
     }
-
-    String ptime, pcomments;
-
-    String title;
-
-    String udp;
-    String uemail;
-    String uid;
-    String uimage;
-
-    String uname, plike;
-
 }
