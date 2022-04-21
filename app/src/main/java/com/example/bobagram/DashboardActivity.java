@@ -1,5 +1,7 @@
 package com.example.bobagram;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -25,12 +27,16 @@ public class DashboardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        ColorDrawable colorDrawable
+                = new ColorDrawable(Color.parseColor("#583b39"));
         actionBar = getSupportActionBar();
         actionBar.setTitle("Profile Activity");
 
         navigationView = findViewById(R.id.dashboard_navigation);
         navigationView.setOnNavigationItemSelectedListener(selectedListener);
         actionBar.setTitle("Home");
+
+        actionBar.setBackgroundDrawable(colorDrawable);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
