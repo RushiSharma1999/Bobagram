@@ -10,7 +10,7 @@
         android:title="Users" />
     <item
         android:id="@+id/nav_addblogs"
-        android:icon="@drawable/ic_add"
+        android:icon="@drawable/boba"
         android:title="Add Post" />
     <item
         android:id="@+id/nav_profile"
