@@ -23,13 +23,17 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.VirtualLayout;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -70,6 +74,7 @@ public class AddBlogsFragment extends Fragment {
     String name, email, uid, dp;
     DatabaseReference databaseReference;
     Button upload;
+    float current_expense;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -132,7 +137,7 @@ public class AddBlogsFragment extends Fragment {
                 String description = "" + des.getText().toString().trim();
                 String drk = "" + drink.getText().toString().trim();
                 String pric = "" + price.getText().toString().trim();
-                String rate = "" + price.getText().toString().trim();
+                String rate = "" + rating.getText().toString().trim();
 
                 // If empty set error
                 if (TextUtils.isEmpty(titl)) {
@@ -325,6 +330,49 @@ public class AddBlogsFragment extends Fragment {
                     hashMap.put("pcomments", "0");
 
                     // set the data into firebase and then empty the title ,description and image data
+                    FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+
+                    databaseReference = FirebaseDatabase.getInstance().getReference("Users");
+                    databaseReference.orderByChild("email").equalTo(firebaseUser.getEmail()).addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            for (DataSnapshot dss : snapshot.getChildren()) {
+                                String ma = dss.child("total_expense").getValue().toString();
+                                current_expense = Float.parseFloat(ma) + Float.parseFloat(pric);
+                                HashMap<String, Object> result = new HashMap<>();
+                                result.put("total_expense", String.valueOf(current_expense));
+                                databaseReference.child(firebaseUser.getUid()).updateChildren(result).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                    }
+                                });
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+                    float total_expense = Float.parseFloat(pric);
+
+                    HashMap<String, Object> result = new HashMap<>();
+                    result.put("total_expense", String.valueOf(total_expense));
+                    databaseReference.child(firebaseUser.getUid()).updateChildren(result).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                        }
+                    });
+
                     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Posts");
                     databaseReference.child(timestamp).setValue(hashMap)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
