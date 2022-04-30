@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="1dp"
     android:orientation="vertical"
-    app:cardBackgroundColor="@color/colorWhite"
+    app:cardBackgroundColor="@color/taroMilkTea"
     app:contentPadding="2dp">
 
     <RelativeLayout
@@ -26,8 +26,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/loadcomment"
-            android:text="Anni"
-            android:textColor="@color/colorBlack"
+            android:text="Rushi"
+            android:textColor="@color/bobaPearls"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -38,8 +38,8 @@
             android:layout_below="@id/commentname"
             android:layout_toEndOf="@id/loadcomment"
             android:layout_toRightOf="@id/loadcomment"
-            android:text="Actual Comment"
-            android:textColor="@color/colorBlack" />
+            android:text="Comment"
+            android:textColor="@color/bobaPearls" />
 
         <TextView
             android:id="@+id/commenttime"

@@ -14,7 +14,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/taroMilkTea">
 
         <LinearLayout
             android:id="@+id/profilelayout"
@@ -144,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:autoLink="all"
-                android:background="@color/colorWhite"
+                android:background="@color/bobaPearls"
                 android:drawableStart="@drawable/ic_like"
                 android:drawableLeft="@drawable/ic_like"
                 android:padding="5dp"
@@ -156,7 +157,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:autoLink="all"
-                android:background="@color/colorWhite"
+                android:background="@color/bobaPearls"
                 android:drawableStart="@drawable/ic_comment"
                 android:drawableLeft="@drawable/ic_comment"
                 android:padding="5dp"

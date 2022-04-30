@@ -36,8 +36,11 @@
             android:id="@+id/prating"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/edit"
             android:ems="10"
+            android:minHeight="80dp"
             android:hint="Enter Rating (1-5)"
+            android:layout_marginTop="15dp"
             android:inputType="number"
             android:numeric="integer" />
 
@@ -46,13 +49,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:minHeight="80dp"
+            android:background="@drawable/edit"
+            android:layout_marginTop="15dp"
             android:hint="Enter Price"
             android:inputType="numberDecimal" />
 
         <ImageView
             android:id="@+id/imagep"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="100dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/edit"
             android:src="@drawable/ic_images" />
@@ -78,7 +84,8 @@
             android:layout_gravity="end"
             android:layout_marginTop="20sp"
             android:text="Upload"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:background="@color/bobaPearls"/>
     </LinearLayout>
 
 </ScrollView>

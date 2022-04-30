@@ -5,12 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PostDetailsActivity">
+    tools:context=".PostDetailsActivity"
+    android:background="@color/taroMilkTea">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/commentsa">
+        android:layout_above="@id/commentsa"
+        android:background="@color/honeyBoba">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -21,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:cardBackgroundColor="@color/colorWhite"
+                app:cardBackgroundColor="@color/taroMilkTea"
                 app:cardCornerRadius="3dp"
                 app:cardElevation="3dp"
                 app:cardUseCompatPadding="true"
@@ -36,6 +38,7 @@
                         android:id="@+id/profilelayoutco"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/lycheeJelly"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
 
@@ -50,6 +53,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:backgroundTint="@color/lycheeJelly"
                             android:orientation="vertical">
 
                             <TextView
@@ -57,13 +61,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Name"
-                                android:textColor="@color/colorBlack"
+                                android:textColor="@color/bobaPearls"
                                 android:textSize="20sp" />
 
                             <TextView
                                 android:id="@+id/utimeco"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:backgroundTint="@color/lycheeJelly"
                                 android:text="33 min" />
 
                         </LinearLayout>
@@ -81,7 +86,9 @@
                         android:id="@+id/ptitleco"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/taroMilkTea"
                         android:text="Title"
+                        android:textColor="@color/bobaPearls"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -89,14 +96,15 @@
                         android:id="@+id/descriptco"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/taroMilkTea"
                         android:text="Description"
-                        android:textColor="@color/colorBlack" />
+                        android:textColor="@color/bobaPearls" />
 
                     <ImageView
                         android:id="@+id/pimagetvco"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        android:background="@color/colorWhite" />
+                        android:background="@color/lycheeJelly" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -125,7 +133,8 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="#F5F0F0" />
+                        android:background="#F5F0F0"
+                        android:backgroundTint="@color/taroMilkTea"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -139,7 +148,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:autoLink="all"
-                            android:background="@color/colorWhite"
+                            android:background="@color/lycheeJelly"
+                            android:backgroundTint="@color/bobaPearls"
                             android:drawableStart="@drawable/ic_like"
                             android:drawableLeft="@drawable/ic_like"
                             android:padding="5dp"
@@ -151,7 +161,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@color/colorWhite"
-
+                            android:backgroundTint="@color/bobaPearls"
                             android:padding="5dp"
                             android:text="SHARE" />
                     </LinearLayout>
@@ -197,7 +207,7 @@
             android:layout_toStartOf="@id/sendcomment"
             android:layout_toEndOf="@id/commentimge"
             android:layout_weight="1"
-            android:background="@color/colorWhite"
+            android:background="@color/taroMilkTea"
             android:hint="Enter Comment..."
             android:inputType="textCapSentences|textMultiLine"
             android:padding="15dp" />
@@ -207,7 +217,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
-            android:background="@color/colorWhite"
+            android:background="@color/taroMilkTea"
             android:src="@drawable/ic_comment" />
 
     </RelativeLayout>

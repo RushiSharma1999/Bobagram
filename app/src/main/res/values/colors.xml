@@ -7,7 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="colorPrimary">#CC2E76BE</color>
+    <color name="colorPrimary">#583b39</color>
     <color name="colorPrimaryDark">#CC073D74</color>
     <color name="colorAccent">#0A527E</color>
     <color name="colorBlack">#000000</color>
@@ -27,6 +27,7 @@
     <color name="bobaPearls">#583b39</color>
     <color name="lycheeJelly">#f0dfc5</color>
     <color name="honeyBoba">#85695d</color>
+    <color name="taroMilkTea">#F1EDED</color>
 
 
 
