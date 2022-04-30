@@ -63,6 +63,14 @@
                         android:layout_marginStart="5dp"
                         android:layout_marginLeft="5dp"
                         android:textColor="@color/colorWhite" />
+
+                    <TextView
+                        android:id="@+id/expensetv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="@color/colorWhite" />
                 </LinearLayout>
 
             </LinearLayout>

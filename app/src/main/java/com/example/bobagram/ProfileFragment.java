@@ -43,7 +43,7 @@ public class ProfileFragment extends Fragment {
     DatabaseReference databaseReference;
     ImageView avatartv;
     ImageView covertv;
-    TextView nam, email;
+    TextView nam, email, expense;
     TextView phone;
     RecyclerView postrecycle;
     StorageReference storageReference;
@@ -81,6 +81,7 @@ public class ProfileFragment extends Fragment {
         avatartv = view.findViewById(R.id.avatartv);
         nam = view.findViewById(R.id.nametv);
         email = view.findViewById(R.id.emailtv);
+        expense = view.findViewById(R.id.expensetv);
         fab = view.findViewById(R.id.fab);
         uid = FirebaseAuth.getInstance().getUid();
         postrecycle = view.findViewById(R.id.recylerposts);
@@ -98,9 +99,11 @@ public class ProfileFragment extends Fragment {
                     String name = "" + dataSnapshot1.child("name").getValue();
                     String emaill = "" + dataSnapshot1.child("email").getValue();
                     String image = "" + dataSnapshot1.child("image").getValue();
+                    String exp = "$" + dataSnapshot1.child("total_expense").getValue();
                     // setting data to our text view
                     nam.setText(name);
                     email.setText(emaill);
+                    expense.setText(exp);
                     try {
                         Glide.with(getActivity()).load(image).into(avatartv);
                     } catch (Exception e) {
