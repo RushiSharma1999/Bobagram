@@ -3,6 +3,7 @@ package com.example.bobagram;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import java.util.HashMap;
 
@@ -10,6 +11,8 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Patterns;
@@ -43,8 +46,14 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);//  set status text dark
+        getWindow().setStatusBarColor(ContextCompat.getColor(LoginActivity.this,R.color.statusBarColor));// set status background white
         setContentView(R.layout.activity_login);
+        ColorDrawable colorDrawable
+                = new ColorDrawable(Color.parseColor("#583b39"));
         ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(colorDrawable);
         actionBar.setTitle("Create Account");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
