@@ -42,7 +42,7 @@
         <entry key="app/src/main/res/layout/activity_registration.xml" value="0.2635416666666667" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.2635416666666667" />
         <entry key="app/src/main/res/layout/dialog_update_password.xml" value="0.2875" />
-        <entry key="app/src/main/res/layout/fragment_add_blogs.xml" value="0.2875" />
+        <entry key="app/src/main/res/layout/fragment_add_blogs.xml" value="0.15584415584415584" />
         <entry key="app/src/main/res/layout/fragment_chat_list.xml" value="0.2875" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.271875" />

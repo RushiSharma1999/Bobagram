@@ -2,6 +2,8 @@ package com.example.bobagram;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
@@ -68,6 +70,9 @@ public class PostDetailsActivity extends AppCompatActivity {
         actionBar.setTitle("Post Details");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
+        ColorDrawable colorDrawable
+                = new ColorDrawable(Color.parseColor("#583b39"));
+        actionBar.setBackgroundDrawable(colorDrawable);
         postId = getIntent().getStringExtra("pid");
         recyclerView = findViewById(R.id.recyclecomment);
         picture = findViewById(R.id.pictureco);

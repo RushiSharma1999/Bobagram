@@ -8,6 +8,8 @@ import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -23,6 +25,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -73,6 +76,14 @@ public class EditProfilePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile_page);
         FirebaseApp.initializeApp(this);
+
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);//  set status text dark
+        getWindow().setStatusBarColor(ContextCompat.getColor(EditProfilePage.this,R.color.statusBarColor));// set status background white
+        ActionBar actionBar = getSupportActionBar();
+        ColorDrawable colorDrawable
+                = new ColorDrawable(Color.parseColor("#583b39"));
+        actionBar.setBackgroundDrawable(colorDrawable);
+        actionBar.setTitle("Edit Profile");
 
         profilepic = findViewById(R.id.profilepic);
         editname = findViewById(R.id.editname);
@@ -403,6 +414,7 @@ public class EditProfilePage extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case CAMERA_REQUEST: {
                 if (grantResults.length > 0) {

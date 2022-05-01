@@ -2,12 +2,10 @@ package com.example.bobagram;
 
 public class ModelUsers {
     String name;
+    float total_amount;
 
     public ModelUsers() {
     }
-
-    String onlineStatus;
-    String typingTo;
 
     public String getName() {
         return name;
@@ -15,14 +13,6 @@ public class ModelUsers {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getTypingTo() {
-        return typingTo;
-    }
-
-    public void setTypingTo(String typingTo) {
-        this.typingTo = typingTo;
     }
 
     public String getEmail() {
@@ -41,6 +31,14 @@ public class ModelUsers {
         this.image = image;
     }
 
+    public float getTotAmt() {
+        return total_amount;
+    }
+
+    public void setTotAmt(float total_amount) {
+        this.total_amount = total_amount;
+    }
+
     public String getUid() {
         return uid;
     }
@@ -49,13 +47,12 @@ public class ModelUsers {
         this.uid = uid;
     }
 
-    public ModelUsers(String name, String onlineStatus, String typingTo, String email, String image, String uid) {
+    public ModelUsers(String name, String email, String image, String uid, float total_amount) {
         this.name = name;
-        this.onlineStatus = onlineStatus;
-        this.typingTo = typingTo;
         this.email = email;
         this.image = image;
         this.uid = uid;
+        this.total_amount = total_amount;
     }
 
     String email;

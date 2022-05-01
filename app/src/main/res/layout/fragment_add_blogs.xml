@@ -78,14 +78,13 @@
 
         <Button
             android:id="@+id/pupload"
-            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="20sp"
             android:text="Upload"
             android:textAlignment="center"
-            android:background="@color/bobaPearls"/>
+            android:backgroundTint="@color/bobaPearls"/>
     </LinearLayout>
 
 </ScrollView>
