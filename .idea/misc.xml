@@ -13,9 +13,12 @@
         <entry key="..\:/Users/Spencer/AndroidStudioProjects/Bobagram/app/src/main/res/layout/activity_splash_screen.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/Spencer/AndroidStudioProjects/Bobagram/app/src/main/res/layout/fragment_add_blogs.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Spencer/AndroidStudioProjects/Bobagram/app/src/main/res/layout/fragment_chat_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Spencer/AndroidStudioProjects/Bobagram/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
         <entry key="..\:/Users/Spencer/AndroidStudioProjects/Bobagram/app/src/main/res/layout/fragment_users.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Spencer/AndroidStudioProjects/Bobagram/app/src/main/res/layout/row_comments.xml" value="0.25" />
         <entry key="..\:/Users/Spencer/AndroidStudioProjects/Bobagram/app/src/main/res/layout/row_posts.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Spencer/AndroidStudioProjects/Bobagram/app/src/main/res/menu/main_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Spencer/AndroidStudioProjects/Bobagram/app/src/main/res/menu/menu_nav.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/jesse/AndroidStudioProjects/Bobagram/app/src/main/res/layout/fragment_profile.xml" value="0.3177083333333333" />
         <entry key="..\:/Users/jesse/AndroidStudioProjects/Bobagram/app/src/main/res/layout/fragment_users.xml" value="0.31875" />
         <entry key="..\:/Users/jesse/AndroidStudioProjects/Bobagram/app/src/main/res/layout/row_users.xml" value="0.31875" />
@@ -25,7 +28,6 @@
         <entry key="app/src/main/res/drawable/ic_comment.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_email.xml" value="0.1565" />
         <entry key="app/src/main/res/drawable/ic_email_light.xml" value="0.1335" />
-        <entry key="app/src/main/res/drawable/ic_home.xml" value="0.109" />
         <entry key="app/src/main/res/drawable/ic_images.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_like.xml" value="0.1" />
@@ -38,21 +40,20 @@
         <entry key="app/src/main/res/layout/activity_edit_profile_page.xml" value="0.2875" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2157135009765625" />
-        <entry key="app/src/main/res/layout/activity_post_details.xml" value="0.3333333333333333" />
-        <entry key="app/src/main/res/layout/activity_post_liked_by.xml" value="0.22903225806451613" />
+        <entry key="app/src/main/res/layout/activity_post_details.xml" value="0.4012269938650307" />
+        <entry key="app/src/main/res/layout/activity_post_liked_by.xml" value="0.2875" />
         <entry key="app/src/main/res/layout/activity_registration.xml" value="0.2635416666666667" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.2635416666666667" />
-        <entry key="app/src/main/res/layout/dialog_update_password.xml" value="0.36059875488281257" />
+        <entry key="app/src/main/res/layout/dialog_update_password.xml" value="0.2875" />
         <entry key="app/src/main/res/layout/fragment_add_blogs.xml" value="0.15584415584415584" />
         <entry key="app/src/main/res/layout/fragment_chat_list.xml" value="0.2875" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.271875" />
-        <entry key="app/src/main/res/layout/fragment_users.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_users.xml" value="0.2875" />
         <entry key="app/src/main/res/layout/row_comments.xml" value="0.2875" />
         <entry key="app/src/main/res/layout/row_posts.xml" value="0.28792114257812496" />
-        <entry key="app/src/main/res/layout/row_users.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/row_users.xml" value="0.2875" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.21770833333333334" />
-        <entry key="app/src/main/res/menu/menu_nav.xml" value="0.28867645263671876" />
         <entry key="app/src/main/res/xml/row_posts.xml" value="0.1" />
       </map>
     </option>

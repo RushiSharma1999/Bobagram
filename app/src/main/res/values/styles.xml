@@ -14,6 +14,11 @@
     <item name="windowActionBar">false</item>
     <item name="windowNoTitle">true</item>
 </style>
+<style name="BottomNavigationViewStyle" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+    <item name="android:background">@color/bobaPearls</item>
+    <item name="itemTextColor">@color/bobaTea</item>
+    <item name="itemIconTint">@color/bobaTea</item>
+</style>
 <!-- Define other styles to fix theme -->
 <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
