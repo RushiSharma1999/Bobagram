@@ -145,9 +145,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:autoLink="all"
-                android:background="@color/bobaPearls"
+                android:backgroundTint="@color/bobaPearls"
                 android:drawableStart="@drawable/ic_like"
-                android:drawableLeft="@drawable/ic_like"
                 android:padding="5dp"
                 android:text="Like" />
 
@@ -157,9 +156,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:autoLink="all"
-                android:background="@color/bobaPearls"
+                android:backgroundTint="@color/bobaPearls"
                 android:drawableStart="@drawable/ic_comment"
-                android:drawableLeft="@drawable/ic_comment"
                 android:padding="5dp"
                 android:text="COMMENT"/>
 

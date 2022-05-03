@@ -15,14 +15,12 @@
         android:id="@+id/dashboard_content"
         android:layout_height="0dp"
         android:layout_width="match_parent"
-
         android:layout_weight="1"></FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/dashboard_navigation"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-
         android:layout_gravity="bottom"
         app:labelVisibilityMode="labeled"
         android:background="?android:attr/windowBackground"
