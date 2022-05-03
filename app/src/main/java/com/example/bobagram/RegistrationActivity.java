@@ -100,12 +100,11 @@ public class RegistrationActivity extends AppCompatActivity {
 
                     String email = user.getEmail();
                     String uid = user.getUid();
-                    //float total_amount = user.getTotAmt();
                     HashMap<Object, String> hashMap = new HashMap<>();
                     hashMap.put("email", email);
                     hashMap.put("uid", uid);
                     hashMap.put("name", uname);
-                    hashMap.put("totalAmount", "total_amount");
+                    hashMap.put("totalAmount", Float.toString(0));
                     hashMap.put("image", "");
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference reference = database.getReference("Users");
